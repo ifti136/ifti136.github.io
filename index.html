@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Social Media</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        color: #333;
+        padding: 20px;
+      }
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        max-width: 900px;
+        width: 90%;
+        margin: 40px auto;
+      }
+      .profile-img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        margin-top: 20px;
+        border: 5px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+      .profile-img:hover {
+        transform: scale(1.05);
+      }
+      h1 {
+        font-size: 2.5em;
+        color: #1e3c72;
+        margin: 20px 0;
+        font-weight: 700;
+      }
+      h2 {
+        color: #2a5298;
+        font-size: 1.5em;
+        margin: 15px 0;
+      }
+      .description {
+        font-size: 1.1em;
+        color: #666;
+        margin: 20px 0;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 20px auto;
+      }
+      .social-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+        padding: 20px;
+      }
+      .social-link {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .social-link:hover {
+        transform: translateY(-5px);
+      }
+      .social-link img {
+        width: 130px;
+        height: 130px;
+        display: block;
+        margin: 10px auto;
+        border-radius: 10px;
+      }
+      .social-link a {
+        display: inline-block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #1e3c72;
+        font-weight: bold;
+        padding: 8px 15px;
+        border-radius: 20px;
+        background: #f0f4ff;
+        transition: all 0.3s ease;
+      }
+      .social-link a:hover {
+        background: #1e3c72;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="DSC_0011 (1).jpg" alt="Profile Picture" class="profile-img" />
+      <h1>Md. Iftekharul Islam</h1>
+      <p class="description">
+        Student at Daffodil International University pursuing a Bachelor's
+        degree in Computer Science and Engineering
+      </p>
+
+      <div class="social-container">
+        <div class="social-link">
+          <h2>LinkedIn</h2>
+          <img src="qr-code (2).png" alt="LinkedIn QR Code" />
+          <a
+            href="https://www.linkedin.com/in/md-iftekharul-islam-7a953628a/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+        <div class="social-link">
+          <h2>GitHub</h2>
+          <img src="qr-code (1).png" alt="GitHub QR Code" />
+          <a href="https://github.com/ifti136" target="_blank">GitHub</a>
+        </div>
+        <div class="social-link">
+          <h2>WhatsApp</h2>
+          <img src="qr-code.png" alt="WhatsApp QR Code" />
+          <a href="https://wa.me/qr/KEXZBMN7UXOQN1" target="_blank">WhatsApp</a>
+        </div>
+        <div class="social-link">
+          <h2>Facebook</h2>
+          <img src="qr-code (3).png" alt="Facebook QR Code" />
+          <a href="https://www.facebook.com/ifte603" target="_blank"
+            >Facebook</a
+          >
+        </div>
+        <div class="social-link">
+          <h2>Telegram</h2>
+          <img src="qr-code (5).png" alt="Telegram QR Code" />
+          <a href="https://t.me/+8801511713786" target="_blank">Telegram</a>
+        </div>
+        <div class="social-link">
+          <h2>Instagram</h2>
+          <img src="qr-code (4).png" alt="Instagram QR Code" />
+          <a
+            href="https://www.instagram.com/ifte603?utm_source=qr&igsh=MWNqMzh0d3cya3liMg=="
+            target="_blank"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
