@@ -3,154 +3,152 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Social Media</title>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        text-align: center;
-        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        color: #333;
-        padding: 20px;
-      }
-      .container {
-        background: rgba(255, 255, 255, 0.95);
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        max-width: 900px;
-        width: 90%;
-        margin: 40px auto;
-      }
-      .profile-img {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        margin-top: 20px;
-        border: 5px solid white;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
-      }
-      .profile-img:hover {
-        transform: scale(1.05);
-      }
-      h1 {
-        font-size: 2.5em;
-        color: #1e3c72;
-        margin: 20px 0;
-        font-weight: 700;
-      }
-      h2 {
-        color: #2a5298;
-        font-size: 1.5em;
-        margin: 15px 0;
-      }
-      .description {
-        font-size: 1.1em;
-        color: #666;
-        margin: 20px 0;
-        line-height: 1.6;
-        max-width: 600px;
-        margin: 20px auto;
-      }
-      .social-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-        margin-top: 40px;
-        padding: 20px;
-      }
-      .social-link {
-        background: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-      .social-link:hover {
-        transform: translateY(-5px);
-      }
-      .social-link img {
-        width: 130px;
-        height: 130px;
-        display: block;
-        margin: 10px auto;
-        border-radius: 10px;
-      }
-      .social-link a {
-        display: inline-block;
-        margin-top: 10px;
-        text-decoration: none;
-        color: #1e3c72;
-        font-weight: bold;
-        padding: 8px 15px;
-        border-radius: 20px;
-        background: #f0f4ff;
-        transition: all 0.3s ease;
-      }
-      .social-link a:hover {
-        background: #1e3c72;
-        color: white;
-      }
-    </style>
+    <title>Md. Iftekharul Islam | Social Hub</title>
+    <meta name="description" content="Professional social hub with QR code integration - Connect with Md. Iftekharul Islam">
+    <meta name="keywords" content="CSE student, DIU, portfolio, social media links">
+    <meta property="og:image" content="assets/images/profile.jpg">
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-    <div class="container">
-      <img src="DSC_0011 (1).jpg" alt="Profile Picture" class="profile-img" />
+    <div class="loader"></div>
+    <div class="progress-bar"></div>
+    <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">🌓</button>
+
+    <main class="container">
+      <img 
+        src="assets/images/profile.jpg" 
+        alt="Md. Iftekharul Islam's professional portrait" 
+        class="profile-img"
+      >
       <h1>Md. Iftekharul Islam</h1>
       <p class="description">
         Student at Daffodil International University pursuing a Bachelor's
         degree in Computer Science and Engineering
       </p>
 
+      <div class="share-container">
+        <button class="share-btn" aria-label="Share this profile">
+          📤 Share
+        </button>
+      </div>
+
       <div class="social-container">
+        <!-- LinkedIn -->
         <div class="social-link">
           <h2>LinkedIn</h2>
-          <img src="qr-code (2).png" alt="LinkedIn QR Code" />
+          <div class="qr-container">
+            <img 
+              src="assets/qrcodes/linkedin-qr.png" 
+              class="qr-code" 
+              alt="LinkedIn QR Code"
+            >
+            <div class="qr-overlay">Scan to Connect</div>
+          </div>
           <a
             href="https://www.linkedin.com/in/md-iftekharul-islam-7a953628a/"
             target="_blank"
-            >LinkedIn</a
-          >
+            rel="noopener"
+            aria-label="Visit LinkedIn profile"
+          >LinkedIn</a>
         </div>
+
+        <!-- GitHub -->
         <div class="social-link">
           <h2>GitHub</h2>
-          <img src="qr-code (1).png" alt="GitHub QR Code" />
-          <a href="https://github.com/ifti136" target="_blank">GitHub</a>
+          <div class="qr-container">
+            <img 
+              src="assets/qrcodes/github-qr.png"
+              class="qr-code"
+              alt="GitHub QR Code"
+            >
+            <div class="qr-overlay">Scan to Connect</div>
+          </div>
+          <a 
+            href="https://github.com/ifti136" 
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit GitHub profile"
+          >GitHub</a>
         </div>
+
+        <!-- WhatsApp -->
         <div class="social-link">
           <h2>WhatsApp</h2>
-          <img src="qr-code.png" alt="WhatsApp QR Code" />
-          <a href="https://wa.me/qr/KEXZBMN7UXOQN1" target="_blank">WhatsApp</a>
+          <div class="qr-container">
+            <img 
+              src="assets/qrcodes/whatsapp-qr.png"
+              class="qr-code"
+              alt="WhatsApp QR Code"
+            >
+            <div class="qr-overlay">Scan to Connect</div>
+          </div>
+          <a 
+            href="https://wa.me/qr/KEXZBMN7UXOQN1" 
+            target="_blank"
+            rel="noopener"
+            aria-label="Connect via WhatsApp"
+          >WhatsApp</a>
         </div>
+
+        <!-- Facebook -->
         <div class="social-link">
           <h2>Facebook</h2>
-          <img src="qr-code (3).png" alt="Facebook QR Code" />
-          <a href="https://www.facebook.com/ifte603" target="_blank"
-            >Facebook</a
-          >
+          <div class="qr-container">
+            <img 
+              src="assets/qrcodes/facebook-qr.png"
+              class="qr-code"
+              alt="Facebook QR Code"
+            >
+            <div class="qr-overlay">Scan to Connect</div>
+          </div>
+          <a 
+            href="https://www.facebook.com/ifte603" 
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit Facebook profile"
+          >Facebook</a>
         </div>
+
+        <!-- Telegram -->
         <div class="social-link">
           <h2>Telegram</h2>
-          <img src="qr-code (5).png" alt="Telegram QR Code" />
-          <a href="https://t.me/+8801511713786" target="_blank">Telegram</a>
+          <div class="qr-container">
+            <img 
+              src="assets/qrcodes/telegram-qr.png"
+              class="qr-code"
+              alt="Telegram QR Code"
+            >
+            <div class="qr-overlay">Scan to Connect</div>
+          </div>
+          <a 
+            href="https://t.me/+8801511713786" 
+            target="_blank"
+            rel="noopener"
+            aria-label="Connect via Telegram"
+          >Telegram</a>
         </div>
+
+        <!-- Instagram -->
         <div class="social-link">
           <h2>Instagram</h2>
-          <img src="qr-code (4).png" alt="Instagram QR Code" />
-          <a
-            href="https://www.instagram.com/ifte603?utm_source=qr&igsh=MWNqMzh0d3cya3liMg=="
+          <div class="qr-container">
+            <img 
+              src="assets/qrcodes/instagram-qr.png"
+              class="qr-code"
+              alt="Instagram QR Code"
+            >
+            <div class="qr-overlay">Scan to Connect</div>
+          </div>
+          <a 
+            href="https://www.instagram.com/ifte603" 
             target="_blank"
-            >Instagram</a
-          >
+            rel="noopener"
+            aria-label="Visit Instagram profile"
+          >Instagram</a>
         </div>
       </div>
-    </div>
+    </main>
+
+    <script src="scripts/app.js"></script>
   </body>
 </html>

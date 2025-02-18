@@ -1,0 +1,263 @@
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+  padding: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: linear-gradient(135deg, #0f1a3d 0%, #1a284f 100%);
+  color: #fff;
+}
+
+.dark-mode .container {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.dark-mode .social-link {
+  background: #1a1a1a;
+}
+
+.dark-mode .social-link a {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  90% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* Loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1e3c72;
+  z-index: 9999;
+  animation: fadeOut 1.5s forwards;
+}
+
+/* Progress Bar */
+.progress-bar {
+  height: 3px;
+  background: #2a5298;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: width 0.2s ease-out;
+}
+
+/* Theme Toggle */
+.theme-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #1e3c72;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.theme-btn:hover {
+  transform: rotate(180deg);
+}
+
+/* Container */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 900px;
+  width: 90%;
+  margin: 40px auto;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-top: 20px;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5em;
+  color: #1e3c72;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.dark-mode h1 {
+  color: #fff;
+}
+
+h2 {
+  color: #2a5298;
+  font-size: 1.5em;
+  margin: 15px 0;
+}
+
+.dark-mode h2 {
+  color: #aec3ff;
+}
+
+.description {
+  font-size: 1.1em;
+  color: #666;
+  margin: 20px auto;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.dark-mode .description {
+  color: #ccc;
+}
+
+/* QR Code Overlay */
+.qr-container {
+  position: relative;
+  margin: 0 auto;
+}
+
+.qr-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(30, 60, 114, 0.9);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  font-size: 0.9em;
+}
+
+.qr-container:hover .qr-overlay {
+  opacity: 1;
+}
+
+/* Social Links Grid */
+.social-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.social-link {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.social-link img {
+  width: 130px;
+  height: 130px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.social-link a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #1e3c72;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #f0f4ff;
+  transition: all 0.3s ease;
+}
+
+.social-link a:hover {
+  background: #1e3c72;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+/* Share Button */
+.share-container {
+  margin: 20px 0;
+}
+
+.share-btn {
+  background: #2a5298;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.share-btn:hover {
+  transform: scale(1.05);
+  background: #1e3c72;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  .social-container {
+    gap: 15px;
+  }
+}
