@@ -5,8 +5,6 @@
 
 A modern, interactive landing page for showcasing social media profiles with QR code integration and advanced web features. Perfect for personal branding and quick connections!
 
-![Project Preview](assets/images/screenshot.png) <!-- Replace with your screenshot -->
-
 ## Features ✨
 
 - **Dark/Light Mode Toggle** 🌟  
