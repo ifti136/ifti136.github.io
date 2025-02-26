@@ -1,68 +1,87 @@
-// Theme Toggle
-const themeToggle = document.getElementById("themeToggle");
-const currentTheme = localStorage.getItem("theme") || "light";
-document.body.setAttribute("data-theme", currentTheme);
+document.addEventListener("DOMContentLoaded", () => {
+  // Theme Toggle
+  const themeToggle = document.getElementById("themeToggle");
+  const currentTheme = localStorage.getItem("theme") || "light";
+  document.body.setAttribute("data-theme", currentTheme);
+  const profileImg = document.querySelector(".profile-img");
 
-themeToggle.addEventListener("click", () => {
-  const newTheme =
-    document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  document.body.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
-});
+  // Profile image error handling
+  profileImg.onerror = function () {
+    this.src = "/assets/images/fallback-profile.jpg";
+    this.alt = "Missing profile image";
+  };
 
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    target.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
+  themeToggle.addEventListener("click", () => {
+    const newTheme =
+      document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    document.body.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  });
+
+  // Section Transitions
+  document.querySelectorAll(".section-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = btn.classList.contains("home_link")
+        ? "#home"
+        : btn.classList.contains("projects_link")
+        ? "#projects"
+        : btn.classList.contains("skills_link")
+        ? "#skills"
+        : "#contact";
+
+      const targetSection = document.querySelector(targetId);
+      const currentSection = document.querySelector(".active-section");
+
+      if (targetSection && targetSection !== currentSection) {
+        const resetAnimation = (element) => {
+          element.style.animation = "none";
+          void element.offsetWidth;
+          element.style.animation = "";
+        };
+
+        resetAnimation(currentSection);
+        resetAnimation(targetSection);
+
+        currentSection.classList.remove("active-section");
+        targetSection.style.visibility = "visible";
+        targetSection.classList.add("active-section");
+      }
     });
   });
-});
 
-// Navbar Scroll Effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    const navBrand = document.querySelector('.nav-brand');
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-        navBrand.style.opacity = '1';
-    } else {
-        navbar.classList.remove('scrolled');
-        navBrand.style.opacity = '0';
-    }
-});
-
-// Adjust section padding based on navbar height
-window.addEventListener('load', () => {
-    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-    document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
-});
-
-// Progress Bar
-window.addEventListener("scroll", () => {
-  const winScroll =
-    document.body.scrollTop || document.documentElement.scrollTop;
-  const height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  document.querySelector(".progress-bar").style.width = `${scrolled}%`;
-});
-
-// Share Button (if present)
-const shareButton = document.querySelector(".share-btn");
-if (shareButton) {
-  shareButton.addEventListener("click", async () => {
-    try {
-      await navigator.share({
-        title: "Md. Iftekharul Islam - Portfolio",
-        url: window.location.href,
+  // Lazy Loading
+  const lazyImages = [].slice.call(document.querySelectorAll(".lazy-load"));
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazy-load");
+          lazyImageObserver.unobserve(lazyImage);
+        }
       });
-    } catch (err) {
-      console.log("Sharing cancelled:", err);
-    }
-  });
-}
+    });
+    lazyImages.forEach((lazyImage) => {
+      lazyImageObserver.observe(lazyImage);
+    });
+  }
+
+  // Hover Effects
+  function addHoverEffects() {
+    document.querySelectorAll(".project-card, .skill-item").forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--x", `${x}px`);
+        card.style.setProperty("--y", `${y}px`);
+      });
+    });
+  }
+  addHoverEffects();
+
+  // Initialization
+  document.querySelector("#home").classList.add("active-section");
+});
