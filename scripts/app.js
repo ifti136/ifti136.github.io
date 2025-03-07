@@ -34,18 +34,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const currentSection = document.querySelector(".active-section");
 
       if (targetSection && targetSection !== currentSection) {
-        const resetAnimation = (element) => {
-          element.style.animation = "none";
-          void element.offsetWidth;
-          element.style.animation = "";
-        };
+        // Add exit animation to current section
+        currentSection.classList.add("exit-section");
 
-        resetAnimation(currentSection);
-        resetAnimation(targetSection);
+        // After exit animation completes
+        setTimeout(() => {
+          currentSection.classList.remove("active-section", "exit-section");
+          targetSection.classList.add("active-section");
 
-        currentSection.classList.remove("active-section");
-        targetSection.style.visibility = "visible";
-        targetSection.classList.add("active-section");
+          // Reset animations for grid items
+          const gridItems = targetSection.querySelectorAll(
+            ".projects-grid > *, .skills-grid > *, .social-container > *"
+          );
+          gridItems.forEach((item) => {
+            item.style.animation = "none";
+            item.offsetHeight; // Trigger reflow
+            item.style.animation = "";
+          });
+        }, 500); // Match this with your exit animation duration
       }
     });
   });
