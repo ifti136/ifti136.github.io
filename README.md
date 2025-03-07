@@ -1,89 +1,71 @@
-# Social Media Hub with QR Integration 🌐
+# 🚀 Personal Portfolio Website - Md. Iftekharul Islam
 
 [![GitHub Pages Deployment](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue?logo=github)](https://your-username.github.io/repository-name)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A modern, interactive landing page for showcasing social media profiles with QR code integration and advanced web features. Perfect for personal branding and quick connections!
+Welcome to my personal portfolio website! This project showcases my skills, projects, and social connections in an interactive and visually appealing manner.
 
-## Features ✨
+## 📌 Features
 
-- **Dark/Light Mode Toggle** 🌟  
-- **QR Code Hover Overlays** 📲  
-- **Smooth Animations & Transitions** 🎮  
-- **Web Share API Integration** 📤  
-- **Scroll Progress Indicator** 📊  
-- **Loading Screen Animation** ⏳  
-- **Mobile-First Responsive Design** 📱  
-- **Enhanced Accessibility (ARIA)** ♿  
-- **SEO Optimized** 🔍  
+- 🌙 **Dark/Light Mode Toggle**  
+- 🎨 **Modern and Responsive UI**  
+- 🖥 **Dynamic Section Transitions**  
+- 🛠 **Showcase of Projects with GitHub Links**  
+- 📜 **Technical Skills Overview**  
+- 📱 **Social Media QR Code Integration**  
 
-## Tech Stack 💻
+## 🔗 Live Demo
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+[View Portfolio](https://ifti136.github.io/) *(Replace with actual link if different)*
 
-## Setup & Deployment 🚀
+## 🛠 Technologies Used
 
-### 1. Clone Repository
-```bash
-git clone https://github.com/your-username/repository-name.git
-cd repository-name
+- **HTML5** - Structure & SEO  
+- **CSS3** - Custom Styling & Animations  
+- **JavaScript (Vanilla)** - Interactive Features  
+- **Font Awesome** - Icons  
+- **Google Fonts** - Typography  
+- **LocalStorage** - Theme Persistence  
+
+## 📂 Project Structure
+
+```
+📁 Portfolio
+│── 📂 assets
+│   ├── 📂 images
+│   │   ├── profile.jpg
+│   │   ├── fallback-profile.jpg
+│   ├── 📂 qrcodes
+│── 📂 scripts
+│   ├── app.js  (Handles interactivity)
+│── 📂 styles
+│   ├── main.css  (Handles styling)
+│── index.html  (Main webpage structure)
+│── README.md  (Project documentation)
 ```
 
-### 2. File Structure
-```
-your-repo/
-├── index.html
-├── styles/
-│   └── main.css
-├── scripts/
-│   └── app.js
-└── assets/
-    ├── images/
-    └── qrcodes/
-```
+## 🎯 How to Use
 
-### 3. Customization
-- Replace placeholder images:
-  - `assets/images/profile.jpg` - Your profile picture
-  - `assets/qrcodes/*.png` - Your social media QR codes
-- Update social links in `index.html`
-- Modify colors in `styles/main.css`
+1. Clone the repository:  
+   ```sh
+   git clone https://github.com/ifti136/ifti136.github.io.git
+   ```
+2. Open `index.html` in a browser.  
+3. Customize as needed!
 
-### 4. Deploy to GitHub Pages
-- Push to GitHub repository
-- Go to **Settings → Pages**
-- Set **branch:** `main`, **folder:** `/ (root)`
+## 💡 Future Improvements
 
-Your live URL:  
-```arduino
-https://your-username.github.io/repository-name
-```
+- 🛠 Add animations to project showcase  
+- 🌍 Multi-language support  
+- 📝 Blog Section for Articles  
+
+## 🤝 Connect with Me
+
+🔗 [GitHub](https://github.com/ifti136)  
+🔗 [LinkedIn](https://www.linkedin.com/in/md-iftekharul-islam-7a953628a/)  
+🔗 [Facebook](https://www.facebook.com/ifte603)  
+🔗 [Telegram](https://t.me/+8801511713786)  
 
 ---
 
-## Customization Guide 🎨
-
-### Change Colors
-```css
-/* In styles/main.css */
-:root {
-  --primary-color: #1e3c72;
-  --secondary-color: #2a5298;
-  --accent-color: #f0f4ff;
-}
-```
-
-### Add New Social Link
-```html
-<!-- In index.html -->
-<div class="social-link">
-  <h2>Platform Name</h2>
-  <div class="qr-container">
-    <img src="assets/qrcodes/new-qr.png" alt="...">
-    <div class="qr-overlay">Scan to Connect</div>
-  </div>
-  <a href="YOUR_LINK" target="_blank" rel="noopener">Platform Name</a>
-</div>
-```
+⭐ If you like this project, consider giving it a **star** on GitHub!
