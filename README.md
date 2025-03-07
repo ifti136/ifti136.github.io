@@ -16,7 +16,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ## 🔗 Live Demo
 
-[View Portfolio](https://ifti136.github.io/) *(Replace with actual link if different)*
+[View Portfolio](https://ifti136.github.io/)
 
 ## 🛠 Technologies Used
 
