@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Profile image error handling
   profileImg.onerror = function () {
-    this.src = "/assets/images/fallback-profile.jpg";
+    // FIXED: Changed path to be relative, not absolute
+    this.src = "assets/images/fallback-profile.jpg";
     this.alt = "Missing profile image";
   };
 
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Lazy Loading
+  // Lazy Loading (Now used for QR codes in contact section)
   const lazyImages = [].slice.call(document.querySelectorAll(".lazy-load"));
   if ("IntersectionObserver" in window) {
     let lazyImageObserver = new IntersectionObserver((entries) => {
@@ -74,19 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Hover Effects
-  function addHoverEffects() {
-    document.querySelectorAll(".project-card, .skill-item").forEach((card) => {
-      card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty("--x", `${x}px`);
-        card.style.setProperty("--y", `${y}px`);
-      });
-    });
-  }
-  addHoverEffects();
+  // REMOVED: Unused hover effect code that was adding event listeners for no reason.
 
   // Initialization
   document.querySelector("#home").classList.add("active-section");
