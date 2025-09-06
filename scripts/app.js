@@ -1,16 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Theme Toggle
   const themeToggle = document.getElementById("themeToggle");
+  const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+  const navLinks = document.querySelector(".nav-links");
+  const profileImg = document.querySelector(".profile-img");
+  const sections = document.querySelectorAll("section");
+  const navAnchors = document.querySelectorAll(".nav-links a");
+
+  // 1. Theme Toggle
   const currentTheme = localStorage.getItem("theme") || "light";
   document.body.setAttribute("data-theme", currentTheme);
-  const profileImg = document.querySelector(".profile-img");
-
-  // Profile image error handling
-  profileImg.onerror = function () {
-    // FIXED: Changed path to be relative, not absolute
-    this.src = "assets/images/fallback-profile.jpg";
-    this.alt = "Missing profile image";
-  };
 
   themeToggle.addEventListener("click", () => {
     const newTheme =
@@ -19,45 +17,58 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("theme", newTheme);
   });
 
-  // Section Transitions
-  document.querySelectorAll(".section-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = btn.classList.contains("home_link")
-        ? "#home"
-        : btn.classList.contains("projects_link")
-        ? "#projects"
-        : btn.classList.contains("skills_link")
-        ? "#skills"
-        : "#contact";
-
-      const targetSection = document.querySelector(targetId);
-      const currentSection = document.querySelector(".active-section");
-
-      if (targetSection && targetSection !== currentSection) {
-        // Add exit animation to current section
-        currentSection.classList.add("exit-section");
-
-        // After exit animation completes
-        setTimeout(() => {
-          currentSection.classList.remove("active-section", "exit-section");
-          targetSection.classList.add("active-section");
-
-          // Reset animations for grid items
-          const gridItems = targetSection.querySelectorAll(
-            ".projects-grid > *, .skills-grid > *, .social-container > *"
-          );
-          gridItems.forEach((item) => {
-            item.style.animation = "none";
-            item.offsetHeight; // Trigger reflow
-            item.style.animation = "";
-          });
-        }, 500); // Match this with your exit animation duration
-      }
-    });
+  // 2. Mobile Menu Toggle
+  mobileMenuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+    const icon = mobileMenuToggle.querySelector("i");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-xmark");
   });
 
-  // Lazy Loading (Now used for QR codes in contact section)
+  // 3. Close mobile menu when a link is clicked
+  navAnchors.forEach(link => {
+      link.addEventListener('click', () => {
+          if (navLinks.classList.contains('open')) {
+              navLinks.classList.remove('open');
+              const icon = mobileMenuToggle.querySelector("i");
+              icon.classList.add("fa-bars");
+              icon.classList.remove("fa-xmark");
+          }
+      });
+  });
+
+  // 4. Active Link Highlighting on Scroll
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5, // Section is 50% in view
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+        navAnchors.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${id}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+  
+  // 5. Profile image error handling
+  profileImg.onerror = function () {
+    this.src = "assets/images/fallback-profile.jpg";
+    this.alt = "Missing profile image";
+  };
+  
+  // 6. Lazy Loading for QR codes
   const lazyImages = [].slice.call(document.querySelectorAll(".lazy-load"));
   if ("IntersectionObserver" in window) {
     let lazyImageObserver = new IntersectionObserver((entries) => {
@@ -74,9 +85,4 @@ document.addEventListener("DOMContentLoaded", () => {
       lazyImageObserver.observe(lazyImage);
     });
   }
-
-  // REMOVED: Unused hover effect code that was adding event listeners for no reason.
-
-  // Initialization
-  document.querySelector("#home").classList.add("active-section");
 });
