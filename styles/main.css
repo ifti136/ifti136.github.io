@@ -330,6 +330,50 @@ section {
     opacity: 0.8;
 }
 
+/* ===== CONTENT LIST (Research / Activities) ===== */
+.content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content-item {
+  padding: 1.5rem 2rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.content-item h3 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  line-height: 1.4;
+}
+
+.content-item .item-meta {
+  font-weight: 600;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.content-item .item-details {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.6;
+  margin-top: 0.4rem;
+}
+
+.content-item ul {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
 /* ===== PROJECTS & SKILLS GRIDS ===== */
 .projects-grid, .skills-grid, .social-container {
   display: grid;
