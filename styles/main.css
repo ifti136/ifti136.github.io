@@ -332,26 +332,33 @@ section {
 
 /* ===== CONTENT LIST (Research / Activities) ===== */
 .content-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  max-width: 900px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
 }
 
 .content-item {
-  padding: 1.5rem 2rem;
   background-color: var(--card-bg);
+  padding: 1.5rem;
   border-radius: 8px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
   text-align: left;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.content-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .content-item h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--primary);
   line-height: 1.4;
+  margin-bottom: 0.5rem;
 }
 
 .content-item .item-meta {
