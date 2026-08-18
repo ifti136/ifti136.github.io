@@ -331,6 +331,20 @@ section {
 }
 
 /* ===== CONTENT LIST (Research / Activities) ===== */
+.subsection-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: left;
+  margin: 2.5rem 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.subsection-title:first-of-type {
+  margin-top: 1rem;
+}
+
 .content-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -379,6 +393,53 @@ section {
   font-size: 0.9rem;
   opacity: 0.9;
   line-height: 1.8;
+}
+
+.wide-item {
+  grid-column: 1 / -1;
+}
+
+/* ===== RESEARCH STATUS TAGS ===== */
+.status-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  margin-top: 0.5rem;
+}
+
+.status-progress {
+  color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 14%, transparent);
+}
+
+.status-prep {
+  color: var(--secondary);
+  background-color: color-mix(in srgb, var(--secondary) 14%, transparent);
+}
+
+/* ===== ACHIEVEMENT BADGES ===== */
+.badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.badge-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.badge-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  color: var(--primary);
 }
 
 /* ===== PROJECTS & SKILLS GRIDS ===== */
@@ -494,7 +555,7 @@ section {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   html {
     scroll-padding-top: 70px;
   }
