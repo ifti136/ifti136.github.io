@@ -1,0 +1,267 @@
+{
+  "site": {
+    "name": "Md. Iftekharul Islam",
+    "title": "Md. Iftekharul Islam | Portfolio",
+    "description": "Professional portfolio of Md. Iftekharul Islam, a student of Computer Science and Engineering.",
+    "footer": "© {year} Md. Iftekharul Islam. All Rights Reserved."
+  },
+
+  "sections": ["education", "research", "activities", "projects", "skills", "contact"],
+
+  "hero": {
+    "tagline": "Machine learning research and software engineering.",
+    "bio": "I'm a final-year Computer Science and Engineering student at Daffodil International University (CGPA 3.71/4.00), and Vice President of the Research Wing at the DIU NLP & ML Research Lab. My work spans machine learning research - from IoT intrusion/malware detection to medical image classification - and practical software engineering, including a MiniJava compiler with an x86 backend and a Flutter inventory-tracking app used by a real small business. I enjoy breaking down complex problems and turning them into working, efficient systems.",
+    "photo": {
+      "src": "assets/images/profile-900.jpg",
+      "alt": "Portrait of Md. Iftekharul Islam"
+    },
+    "caption": {
+      "title": "Vice President, Research Wing",
+      "subtitle": "DIU NLP & ML Research Lab"
+    },
+    "buttons": [
+      { "label": "View my work", "href": "#projects", "style": "primary" },
+      { "label": "Research papers", "href": "#research", "style": "ghost" }
+    ]
+  },
+
+  "education": {
+    "title": "Education",
+    "items": [
+      {
+        "title": "B.Sc. in Computer Science And Engineering",
+        "org": "Daffodil International University, Dhaka",
+        "period": "2023 - Present",
+        "detail": "CGPA: 3.71 out of 4.00 (8 semesters completed, 2 remaining)"
+      },
+      {
+        "title": "Higher Secondary Certificate (HSC)",
+        "org": "MEH Arif College, Konabari, Gazipur",
+        "period": "2019 - 2021",
+        "detail": "GPA: 5.00 out of 5.00"
+      },
+      {
+        "title": "Secondary School Certificate (SSC)",
+        "org": "Milestone College, Joydevpur, Gazipur",
+        "period": "2017 - 2019",
+        "detail": "GPA: 4.67 out of 5.00"
+      }
+    ]
+  },
+
+  "research": {
+    "title": "Research Papers",
+    "statuses": {
+      "progress": { "label": "Work in Progress", "summary": "in progress" },
+      "prep": { "label": "Manuscript in Preparation", "summary": "in preparation" },
+      "published": { "label": "Published", "summary": "published" }
+    },
+    "items": [
+      {
+        "title": "A Hybrid Machine Learning and Deep Learning Based Intrusion and Malware Detection System for IoT Devices Using Network Traffic Analysis",
+        "authors": ["Md. Iftekharul Islam", "Ananya Dev Dulal"],
+        "status": "progress"
+      },
+      {
+        "title": "Efficient Custom CNN for Multi-Class Brain Tumor Classification from MRI: A Comparative Study with MobileNetV2 and DenseNet121",
+        "authors": ["Md. Iftekharul Islam", "Ananya Dev Dulal", "Shinthiya Islam Ayshi", "Masum Al Mahamud"],
+        "status": "prep"
+      },
+      {
+        "title": "Interpretable Hybrid CNN-Transformer Architectures for Multi-Class Lung Disease Classification: A Comprehensive Comparative Study",
+        "authors": ["Md. Iftekharul Islam", "Ananya Dev Dulal", "Masum Al Mahamud", "Shinthiya Islam Ayshi"],
+        "status": "prep"
+      },
+      {
+        "title": "Ensemble Machine Learning for Breast Cancer Diagnosis: A Comparative Study Highlighting Tuned XGBoost Performance",
+        "authors": ["Md. Iftekharul Islam", "Ananya Dev Dulal", "Shinthiya Islam Ayshi", "Masum Al Mahamud", "Md. Sadekur Rahman"],
+        "status": "prep"
+      },
+      {
+        "title": "Human Facial Expression Recognition Using a Custom Convolutional Neural Network: A Comparative Study with MobileNetV2 and DenseNet121",
+        "authors": ["Ananya Dev Dulal", "Md. Iftekharul Islam", "Shinthiya Islam Ayshi", "Masum Al Mahamud"],
+        "status": "prep"
+      },
+      {
+        "title": "Kidney Stone Detection Using Deep Learning",
+        "authors": ["Ananya Dev Dulal", "Md. Iftekharul Islam", "Shinthiya Islam Ayshi", "Masum Al Mahamud"],
+        "status": "progress"
+      }
+    ]
+  },
+
+  "activities": {
+    "title": "Activities & Leadership",
+    "nav": "Activities",
+    "leadershipTitle": "Leadership Roles",
+    "leadership": [
+      { "title": "Vice President – Research Wing", "org": "DIU NLP & ML Research Lab", "period": "2026 - Present" },
+      { "title": "IT Secretary", "org": "DIU Voluntary Service Club", "period": "2026 - Present" },
+      { "title": "Executive Member", "org": "DIU Voluntary Service Club", "period": "2025 - 2026" },
+      { "title": "Student Welfare Secretary", "org": "DIU Gazipur District Community", "period": "2025 - 2026" },
+      { "title": "General Member", "org": "DIU Study Abroad Forum", "period": "2026 - Present" }
+    ],
+    "volunteeringTitle": "Voluntary Contributions",
+    "volunteering": "Contributed to Foundation Day 2025, Fresher Orientation – Fall 2025, Convocation 2026, and Club Enrollment 2025 - volunteering for crowd management, guiding newly admitted students, assisting with food distribution, and providing technical, operational, and administrative support to ensure smooth event execution.",
+    "achievementsTitle": "Achievements & Certificates",
+    "achievements": [
+      {
+        "group": "Competitions",
+        "items": [
+          { "title": "ICPC Participant", "org": "ICPC Foundation", "year": "2024" },
+          { "title": "Prompt Battle Competition", "result": "6th Place", "org": "DIU", "year": "2024" },
+          { "title": "Growing Star Program", "result": "6th Place", "org": "DIU", "year": "2023" },
+          { "title": "Unlock The Algorithm Programming Contest", "result": "Finalist", "org": "DIU", "year": "2024" },
+          { "title": "Take Off Programming Contest", "result": "Finalist", "org": "DIU", "year": "2023" }
+        ]
+      },
+      {
+        "group": "Certificates",
+        "items": [
+          { "title": "Machine Learning with Python", "org": "IBM, Coursera", "year": "2025" },
+          { "title": "Machine Learning for Absolute Beginners (Python & Pandas)", "org": "Alison", "year": "2025" },
+          { "title": "Data Science Math Skills", "org": "Duke University, Coursera", "year": "2025" },
+          { "title": "Basic Computers Course", "org": "Saifurs", "year": "2022" },
+          { "title": "Spoken English Course", "org": "Saifurs", "year": "2022" }
+        ]
+      }
+    ]
+  },
+
+  "projects": {
+    "title": "Featured Projects",
+    "items": [
+      {
+        "title": "MiniJava Compiler (x86 backend)",
+        "description": "A MiniJava compiler implemented in Python. Performs lexical, syntax, semantic analysis, generates TAC, and outputs x86-style assembly code.",
+        "tags": ["Python", "Compilers", "x86"],
+        "featured": true,
+        "links": [{ "label": "View code", "url": "https://github.com/ifti136/minijava-compiler-x86" }]
+      },
+      {
+        "title": "Student Management System",
+        "description": "C++ console application for managing student records.",
+        "tags": ["C++"],
+        "links": [{ "label": "View code", "url": "https://github.com/ifti136/Student-Management-System-C-Console-Application-" }]
+      },
+      {
+        "title": "Banking System",
+        "description": "Java-based banking system with GUI and MySQL database.",
+        "tags": ["Java", "MySQL"],
+        "links": [{ "label": "View code", "url": "https://github.com/ifti136/banking-system-java" }]
+      },
+      {
+        "title": "Invenio",
+        "description": "Solo-owner Flutter Android app for a small reseller to track inventory, log sales, record expenses, and see daily profit - fully offline, no auth, no cloud sync, one APK.",
+        "tags": ["Flutter", "Android"],
+        "featured": true,
+        "links": [{ "label": "View code", "url": "https://github.com/ifti136/Invenio" }]
+      },
+      {
+        "title": "Coin Tracker",
+        "description": "Cross-platform tracker with a PyQt5 desktop GUI, Flask web interface, mobile app, and real-time Firebase sync.",
+        "tags": ["Python", "PyQt5", "Flask", "Firebase"],
+        "links": [{ "label": "View code", "url": "https://github.com/ifti136/Coin-Tracker" }]
+      },
+      {
+        "title": "Satellite Simulation",
+        "description": "3D solar system simulation in Python, PyOpenGL, and pygame - all 8 planets, moons, Saturn's rings, three real NASA satellites in Earth orbit, multiple camera modes, and an interactive HUD with time controls.",
+        "tags": ["Python", "PyOpenGL", "pygame"],
+        "links": [{ "label": "View code", "url": "https://github.com/ifti136/satellite-simulation" }]
+      },
+      {
+        "title": "Portfolio Webpage",
+        "description": "Responsive personal website built with HTML, CSS, and JavaScript to showcase projects, skills, and professional details.",
+        "tags": ["HTML", "CSS", "JavaScript", "Three.js"],
+        "links": [{ "label": "View code", "url": "https://github.com/ifti136/ifti136.github.io" }]
+      }
+    ]
+  },
+
+  "skills": {
+    "title": "Technical Skills",
+    "groups": [
+      {
+        "name": "Programming languages",
+        "items": [
+          { "name": "Python", "icon": "fa-brands fa-python" },
+          { "name": "Java", "icon": "fa-brands fa-java" },
+          { "name": "C/C++", "icon": "fa-solid fa-code" }
+        ]
+      },
+      {
+        "name": "Tools and databases",
+        "items": [
+          { "name": "MySQL", "icon": "fa-solid fa-database" },
+          { "name": "Git", "icon": "fa-brands fa-git-alt" }
+        ]
+      },
+      {
+        "name": "Office and design",
+        "items": [
+          { "name": "MS Office", "icon": "fa-solid fa-file-word" },
+          { "name": "Canva", "icon": "fa-solid fa-palette" }
+        ]
+      },
+      {
+        "name": "Spoken languages",
+        "items": [
+          { "name": "Bangla (Native)", "icon": "fa-solid fa-language" },
+          { "name": "English (Fluent)", "icon": "fa-solid fa-language" }
+        ]
+      }
+    ]
+  },
+
+  "contact": {
+    "title": "Connect with Me",
+    "nav": "Contact",
+    "intro": "Feel free to reach out or scan a QR code to connect on your favorite platform.",
+    "links": [
+      {
+        "name": "LinkedIn",
+        "icon": "fa-brands fa-linkedin-in",
+        "url": "https://www.linkedin.com/in/md-iftekharul-islam-7a953628a/",
+        "qr": "assets/qrcodes/linkedin-qr.png",
+        "action": "Visit Profile",
+        "hero": true
+      },
+      {
+        "name": "GitHub",
+        "icon": "fa-brands fa-github",
+        "url": "https://github.com/ifti136",
+        "qr": "assets/qrcodes/github-qr.png",
+        "action": "Visit Profile",
+        "hero": true
+      },
+      {
+        "name": "WhatsApp",
+        "icon": "fa-brands fa-whatsapp",
+        "url": "https://wa.me/qr/KEXZBMN7UXOQN1",
+        "qr": "assets/qrcodes/whatsapp-qr.png",
+        "action": "Send Message"
+      },
+      {
+        "name": "Facebook",
+        "icon": "fa-brands fa-facebook-f",
+        "url": "https://www.facebook.com/ifte603",
+        "qr": "assets/qrcodes/facebook-qr.png",
+        "action": "Visit Profile"
+      },
+      {
+        "name": "Telegram",
+        "icon": "fa-brands fa-telegram",
+        "url": "https://t.me/+8801511713786",
+        "qr": "assets/qrcodes/telegram-qr.png",
+        "action": "Send Message"
+      },
+      {
+        "name": "Instagram",
+        "icon": "fa-brands fa-instagram",
+        "url": "https://www.instagram.com/ifte603",
+        "qr": "assets/qrcodes/instagram-qr.png",
+        "action": "Visit Profile"
+      }
+    ]
+  }
+}

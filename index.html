@@ -8,8 +8,24 @@
       name="description"
       content="Professional portfolio of Md. Iftekharul Islam, a student of Computer Science and Engineering."
     />
+    <meta name="theme-color" content="#2b3ce8" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- Set the theme before first paint so the page never flashes the wrong colors. -->
+    <script>
+      (function () {
+        var theme = "light";
+        try {
+          theme = localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        } catch (e) {}
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -17,386 +33,27 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <link rel="stylesheet" href="styles/main.css" />
+
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+    </script>
   </head>
   <body>
-    <header class="navbar">
-      <div class="container nav-container">
-        <a href="#home" class="nav-brand">Md. Iftekharul Islam</a>
-        <nav class="nav-links">
-          <ul>
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav-actions">
-           <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-             <i class="fa-solid fa-circle-half-stroke"></i>
-           </button>
-           <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Open menu">
-             <i class="fa-solid fa-bars"></i>
-           </button>
-        </div>
-      </div>
-    </header>
+    <a class="skip-link" href="#site-main">Skip to content</a>
+    <div id="progress" class="progress" aria-hidden="true"></div>
+    <canvas id="scene" class="scene" aria-hidden="true"></canvas>
 
-    <main>
-      <section id="home" class="section-full">
-        <div class="container hero-container">
-          <img
-            src="assets/images/profile.jpg"
-            alt="Profile of Md. Iftekharul Islam"
-            class="profile-img"
-            loading="eager"
-          />
+    <header id="site-header" class="nav"></header>
+    <main id="site-main" tabindex="-1">
+      <noscript>
+        <div class="container load-error">
           <h1>Md. Iftekharul Islam</h1>
-          <p class="description">
-            I'm a final-year Computer Science and Engineering student at Daffodil International University (CGPA 3.71/4.00), and Vice President of the Research Wing at the DIU NLP & ML Research Lab. My work spans machine learning research - from IoT intrusion/malware detection to medical image classification - and practical software engineering, including a MiniJava compiler with an x86 backend and a Flutter inventory-tracking app used by a real small business. I enjoy breaking down complex problems and turning them into working, efficient systems.
-          </p>
-          <a href="#projects" class="btn btn-primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+          <p>This portfolio needs JavaScript to show its content.</p>
         </div>
-      </section>
-
-      <section id="education" class="section-regular">
-        <div class="container">
-          <h2 class="section-title">Education</h2>
-          <div class="education-timeline">
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3>B.Sc. in Computer Science And Engineering</h3>
-                <p class="timeline-meta">Daffodil International University, Dhaka | 2023 - Present</p>
-                <p class="timeline-details">CGPA: 3.71 out of 4.00 (8 semesters completed, 2 remaining)</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3>Higher Secondary Certificate (HSC)</h3>
-                <p class="timeline-meta">MEH Arif College, Konabari, Gazipur | 2019 - 2021</p>
-                <p class="timeline-details">GPA: 5.00 out of 5.00</p>
-              </div>
-            </div>
-             <div class="timeline-item">
-              <div class="timeline-content">
-                <h3>Secondary School Certificate (SSC)</h3>
-                <p class="timeline-meta">Milestone College, Joydevpur, Gazipur | 2017 - 2019</p>
-                <p class="timeline-details">GPA: 4.67 out of 5.00</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="research" class="section-regular">
-        <div class="container">
-          <h2 class="section-title">Research Papers</h2>
-          <div class="content-list">
-            <div class="content-item">
-              <h3>A Hybrid Machine Learning and Deep Learning Based Intrusion and Malware Detection System for IoT Devices Using Network Traffic Analysis</h3>
-              <p class="item-meta"><strong>Md. Iftekharul Islam</strong>, Ananya Dev Dulal</p>
-              <span class="status-tag status-progress">Work in Progress</span>
-            </div>
-            <div class="content-item">
-              <h3>Efficient Custom CNN for Multi-Class Brain Tumor Classification from MRI: A Comparative Study with MobileNetV2 and DenseNet121</h3>
-              <p class="item-meta"><strong>Md. Iftekharul Islam</strong>, Ananya Dev Dulal, Shinthiya Islam Ayshi, Masum Al Mahamud</p>
-              <span class="status-tag status-prep">Manuscript in Preparation</span>
-            </div>
-            <div class="content-item">
-              <h3>Interpretable Hybrid CNN-Transformer Architectures for Multi-Class Lung Disease Classification: A Comprehensive Comparative Study</h3>
-              <p class="item-meta"><strong>Md. Iftekharul Islam</strong>, Ananya Dev Dulal, Masum Al Mahamud, Shinthiya Islam Ayshi</p>
-              <span class="status-tag status-prep">Manuscript in Preparation</span>
-            </div>
-            <div class="content-item">
-              <h3>Ensemble Machine Learning for Breast Cancer Diagnosis: A Comparative Study Highlighting Tuned XGBoost Performance</h3>
-              <p class="item-meta"><strong>Md. Iftekharul Islam</strong>, Ananya Dev Dulal, Shinthiya Islam Ayshi, Masum Al Mahamud, Md. Sadekur Rahman</p>
-              <span class="status-tag status-prep">Manuscript in Preparation</span>
-            </div>
-            <div class="content-item">
-              <h3>Human Facial Expression Recognition Using a Custom Convolutional Neural Network: A Comparative Study with MobileNetV2 and DenseNet121</h3>
-              <p class="item-meta">Ananya Dev Dulal, <strong>Md. Iftekharul Islam</strong>, Shinthiya Islam Ayshi, Masum Al Mahamud</p>
-              <span class="status-tag status-prep">Manuscript in Preparation</span>
-            </div>
-            <div class="content-item">
-              <h3>Kidney Stone Detection Using Deep Learning</h3>
-              <p class="item-meta">Ananya Dev Dulal, <strong>Md. Iftekharul Islam</strong>, Shinthiya Islam Ayshi, Masum Al Mahamud</p>
-              <span class="status-tag status-progress">Work in Progress</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="activities" class="section-regular">
-        <div class="container">
-          <h2 class="section-title">Activities & Leadership</h2>
-
-          <h3 class="subsection-title">Leadership Roles</h3>
-          <div class="education-timeline">
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3>Vice President – Research Wing</h3>
-                <p class="timeline-meta">DIU NLP & ML Research Lab | 2026 - Present</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3>IT Secretary</h3>
-                <p class="timeline-meta">DIU Voluntary Service Club | 2026 - Present</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3>Executive Member</h3>
-                <p class="timeline-meta">DIU Voluntary Service Club | 2025 - 2026</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3>Student Welfare Secretary</h3>
-                <p class="timeline-meta">DIU Gazipur District Community | 2025 - 2026</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3>General Member</h3>
-                <p class="timeline-meta">DIU Study Abroad Forum | 2026 - Present</p>
-              </div>
-            </div>
-          </div>
-
-          <h3 class="subsection-title">Voluntary Contributions</h3>
-          <div class="content-list">
-            <div class="content-item wide-item">
-              <p class="item-details">
-                Contributed to Foundation Day 2025, Fresher Orientation – Fall 2025,
-                Convocation 2026, and Club Enrollment 2025 - volunteering for crowd
-                management, guiding newly admitted students, assisting with food
-                distribution, and providing technical, operational, and administrative
-                support to ensure smooth event execution.
-              </p>
-            </div>
-          </div>
-
-          <h3 class="subsection-title">Achievements & Certificates</h3>
-          <div class="badge-grid">
-            <div class="badge-item">ICPC Participant - ICPC Foundation (2024)</div>
-            <div class="badge-item">Prompt Battle Competition - 6th Place, DIU (2024)</div>
-            <div class="badge-item">Growing Star Program - 6th Place, DIU (2023)</div>
-            <div class="badge-item">Unlock The Algorithm Programming Contest - Finalist, DIU (2024)</div>
-            <div class="badge-item">Take Off Programming Contest - Finalist, DIU (2023)</div>
-            <div class="badge-item">Machine Learning with Python - IBM, Coursera (2025)</div>
-            <div class="badge-item">Machine Learning for Absolute Beginners (Python & Pandas) - Alison (2025)</div>
-            <div class="badge-item">Data Science Math Skills - Duke University, Coursera (2025)</div>
-            <div class="badge-item">Basic Computers Course - Saifurs (2022)</div>
-            <div class="badge-item">Spoken English Course - Saifurs (2022)</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="section-regular">
-        <div class="container">
-          <h2 class="section-title">Featured Projects</h2>
-          <div class="projects-grid">
-            <div class="project-card">
-              <h3>Student Management System</h3>
-              <p>C++ console application for managing student records.</p>
-              <a
-                href="https://github.com/ifti136/Student-Management-System-C-Console-Application-"
-                target="_blank" class="btn"
-                >View Code →</a
-              >
-            </div>
-            <div class="project-card">
-              <h3>Banking System</h3>
-              <p>Java-based banking system with GUI and MySQL database.</p>
-              <a
-                href="https://github.com/ifti136/banking-system-java"
-                target="_blank" class="btn"
-                >View Code →</a
-              >
-            </div>
-            <div class="project-card">
-              <h3>MiniJava Compiler (x86 backend)</h3>
-              <p>
-                A MiniJava compiler implemented in Python. Performs lexical,
-                syntax, semantic analysis, generates TAC, and outputs x86-style
-                assembly code.
-              </p>
-              <a
-                href="https://github.com/ifti136/minijava-compiler-x86"
-                target="_blank" class="btn"
-                >View Code →</a
-              >
-            </div>
-            <div class="project-card">
-              <h3>Coin Tracker</h3>
-              <p>
-                Cross-platform tracker with a PyQt5 desktop GUI, Flask web
-                interface, mobile app, and real-time Firebase sync.
-              </p>
-              <a href="https://github.com/ifti136/Coin-Tracker" target="_blank" class="btn"
-                >View Code →</a
-              >
-            </div>
-            <div class="project-card">
-              <h3>Satellite Simulation</h3>
-              <p>
-                3D solar system simulation in Python, PyOpenGL, and pygame -
-                all 8 planets, moons, Saturn's rings, three real NASA
-                satellites in Earth orbit, multiple camera modes, and an
-                interactive HUD with time controls.
-              </p>
-              <a href="https://github.com/ifti136/satellite-simulation" target="_blank" class="btn"
-                >View Code →</a
-              >
-            </div>
-            <div class="project-card">
-              <h3>Invenio</h3>
-              <p>
-                Solo-owner Flutter Android app for a small reseller to track
-                inventory, log sales, record expenses, and see daily profit -
-                fully offline, no auth, no cloud sync, one APK.
-              </p>
-              <a href="https://github.com/ifti136/Invenio" target="_blank" class="btn"
-                >View Code →</a
-              >
-            </div>
-            <div class="project-card">
-              <h3>Portfolio Webpage</h3>
-              <p>
-                Responsive personal website built with HTML, CSS, and
-                JavaScript to showcase projects, skills, and professional
-                details.
-              </p>
-              <a
-                href="https://github.com/ifti136/ifti136.github.io"
-                target="_blank" class="btn"
-                >View Code →</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" class="section-regular">
-        <div class="container">
-          <h2 class="section-title">Technical Skills</h2>
-          <div class="skills-grid">
-            <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
-            <div class="skill-item"><i class="fab fa-java"></i><span>Java</span></div>
-            <div class="skill-item"><i class="fas fa-code"></i><span>C/C++</span></div>
-            <div class="skill-item"><i class="fas fa-database"></i><span>MySQL</span></div>
-            <div class="skill-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
-            <div class="skill-item"><i class="fas fa-file-word"></i><span>MS Office</span></div>
-            <div class="skill-item"><i class="fas fa-palette"></i><span>Canva</span></div>
-            <div class="skill-item"><i class="fas fa-language"></i><span>Bangla (Native)</span></div>
-            <div class="skill-item"><i class="fas fa-language"></i><span>English (Fluent)</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section-regular">
-        <div class="container">
-          <h2 class="section-title">Connect with Me</h2>
-          <p class="description">
-            Feel free to reach out or scan a QR code to connect on your favorite platform.
-          </p>
-          <div class="social-container">
-            <div class="social-link">
-              <h3>LinkedIn</h3>
-              <div class="qr-container">
-                <img
-                  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                  data-src="assets/qrcodes/linkedin-qr.png"
-                  class="qr-code lazy-load"
-                  alt="LinkedIn QR"
-                />
-                <div class="qr-overlay">Scan Me</div>
-              </div>
-              <a
-                href="https://www.linkedin.com/in/md-iftekharul-islam-7a953628a/"
-                target="_blank" class="btn"
-                >Visit Profile</a
-              >
-            </div>
-            <div class="social-link">
-              <h3>GitHub</h3>
-              <div class="qr-container">
-                <img
-                  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                  data-src="assets/qrcodes/github-qr.png"
-                  class="qr-code lazy-load"
-                  alt="GitHub QR"
-                />
-                <div class="qr-overlay">Scan Me</div>
-              </div>
-              <a href="https://github.com/ifti136" target="_blank" class="btn">Visit Profile</a>
-            </div>
-            <div class="social-link">
-              <h3>WhatsApp</h3>
-              <div class="qr-container">
-                <img
-                  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                  data-src="assets/qrcodes/whatsapp-qr.png"
-                  class="qr-code lazy-load"
-                  alt="WhatsApp QR"
-                />
-                <div class="qr-overlay">Scan Me</div>
-              </div>
-              <a href="https://wa.me/qr/KEXZBMN7UXOQN1" target="_blank" class="btn">Send Message</a>
-            </div>
-             <div class="social-link">
-              <h3>Facebook</h3>
-              <div class="qr-container">
-                <img
-                  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                  data-src="assets/qrcodes/facebook-qr.png"
-                  class="qr-code lazy-load"
-                  alt="Facebook QR"
-                />
-                <div class="qr-overlay">Scan Me</div>
-              </div>
-              <a href="https://www.facebook.com/ifte603" target="_blank" class="btn">Visit Profile</a>
-            </div>
-            <div class="social-link">
-              <h3>Telegram</h3>
-              <div class="qr-container">
-                <img
-                  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                  data-src="assets/qrcodes/telegram-qr.png"
-                  class="qr-code lazy-load"
-                  alt="Telegram QR"
-                />
-                <div class="qr-overlay">Scan Me</div>
-              </div>
-              <a href="https://t.me/+8801511713786" target="_blank" class="btn">Send Message</a>
-            </div>
-            <div class="social-link">
-              <h3>Instagram</h3>
-              <div class="qr-container">
-                <img
-                  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                  data-src="assets/qrcodes/instagram-qr.png"
-                  class="qr-code lazy-load"
-                  alt="Instagram QR"
-                />
-                <div class="qr-overlay">Scan Me</div>
-              </div>
-              <a href="https://www.instagram.com/ifte603" target="_blank" class="btn">Visit Profile</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      </noscript>
     </main>
+    <footer id="site-footer" class="footer"></footer>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Md. Iftekharul Islam. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="scripts/app.js"></script>
+    <script type="module" src="scripts/main.js"></script>
   </body>
 </html>
