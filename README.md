@@ -1,71 +1,73 @@
-# 🚀 Personal Portfolio Website - Md. Iftekharul Islam
+# Personal Portfolio - Md. Iftekharul Islam
 
-[![GitHub Pages Deployment](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue?logo=github)](https://your-username.github.io/repository-name)
-![License](https://img.shields.io/badge/License-MIT-green)
+Live site: https://ifti136.github.io/
 
-Welcome to my personal portfolio website! This project showcases my skills, projects, and social connections in an interactive and visually appealing manner.
+A static portfolio (no build step) with a slow-moving Three.js network in the background, a tilting hero photo, and a dark/light theme. **All text lives in one file, `data/content.json`.** You never need to edit HTML to update the content.
 
-## 📌 Features
+## Updating content
 
-- 🌙 **Dark/Light Mode Toggle**  
-- 🎨 **Modern and Responsive UI**  
-- 🖥 **Dynamic Section Transitions**  
-- 🛠 **Showcase of Projects with GitHub Links**  
-- 📜 **Technical Skills Overview**  
-- 📱 **Social Media QR Code Integration**  
+Open `data/content.json` (on GitHub: open the file, click the pencil icon, edit, commit). The site rebuilds itself from that file on every page load.
 
-## 🔗 Live Demo
+| To do this | Edit this |
+| --- | --- |
+| Change the intro, tagline or buttons | `hero` |
+| Add a degree | add an object to `education.items` |
+| Add a paper | add an object to `research.items` (`status` is `progress`, `prep` or `published`; add `"link": "https://..."` to make the title a link) |
+| Add a role, award or certificate | `activities.leadership` or `activities.achievements` |
+| Add a project | add an object to `projects.items` (set `"featured": true` to make it a wide card) |
+| Add a skill | add to a group in `skills.groups`, or add a new group |
+| Add a social link | add to `contact.links` (`"hero": true` also shows it as an icon in the hero) |
+| Hide a section | set `"hidden": true` inside it, or remove its name from the top-level `sections` list |
+| Reorder sections | reorder the names in the top-level `sections` list |
 
-[View Portfolio](https://ifti136.github.io/)
+Example, adding a paper:
 
-## 🛠 Technologies Used
-
-- **HTML5** - Structure & SEO  
-- **CSS3** - Custom Styling & Animations  
-- **JavaScript (Vanilla)** - Interactive Features  
-- **Font Awesome** - Icons  
-- **Google Fonts** - Typography  
-- **LocalStorage** - Theme Persistence  
-
-## 📂 Project Structure
-
-```
-📁 Portfolio
-│── 📂 assets
-│   ├── 📂 images
-│   │   ├── profile.jpg
-│   │   ├── fallback-profile.jpg
-│   ├── 📂 qrcodes
-│── 📂 scripts
-│   ├── app.js  (Handles interactivity)
-│── 📂 styles
-│   ├── main.css  (Handles styling)
-│── index.html  (Main webpage structure)
-│── README.md  (Project documentation)
+```json
+{
+  "title": "My New Paper Title",
+  "authors": ["Md. Iftekharul Islam", "Co-author Name"],
+  "status": "prep",
+  "link": "https://doi.org/..."
+}
 ```
 
-## 🎯 How to Use
+Notes:
 
-1. Clone the repository:  
-   ```sh
-   git clone https://github.com/ifti136/ifti136.github.io.git
-   ```
-2. Open `index.html` in a browser.  
-3. Customize as needed!
+- Commas matter. Each item in a list needs a comma after it except the last. If the page shows "The page content could not be loaded", the JSON has a typo; paste it into https://jsonlint.com to find it.
+- Icons use [Font Awesome 6 free](https://fontawesome.com/search?o=r&m=free) class names, e.g. `"fa-brands fa-github"`.
+- Your name in an author list is shown in bold automatically (it must match `site.name`).
+- Names and text are inserted as plain text, so characters like `<` or `&` are safe.
 
-## 💡 Future Improvements
+## Replacing images
 
-- 🛠 Add animations to project showcase  
-- 🌍 Multi-language support  
-- 📝 Blog Section for Articles  
+- Profile photo: replace `assets/images/profile-900.jpg` (about 900px wide is plenty) or change `hero.photo.src`.
+- QR codes: replace the files in `assets/qrcodes/` or change each link's `qr` path.
 
-## 🤝 Connect with Me
+## Running locally
 
-🔗 [GitHub](https://github.com/ifti136)  
-🔗 [LinkedIn](https://www.linkedin.com/in/md-iftekharul-islam-7a953628a/)  
-🔗 [Facebook](https://www.facebook.com/ifte603)  
-🔗 [Telegram](https://t.me/+8801511713786)  
+Browsers block loading `data/content.json` from `file://`, so use a tiny server:
 
----
+```sh
+python -m http.server 8000
+# then open http://localhost:8000
+```
 
-⭐ If you like this project, consider giving it a **star** on GitHub!
+## How it is built
+
+```
+index.html            page shell, fonts, import map for Three.js
+data/content.json     all content
+scripts/main.js       loads the content, starts everything
+scripts/render.js     turns content.json into the page
+scripts/effects.js    theme, nav, scroll progress, tilt
+scripts/scene.js      Three.js background (loaded last; the site works without it)
+styles/main.css       all styling
+```
+
+- Three.js 0.160.0 is loaded from the jsDelivr CDN through the import map in `index.html`. If it fails to load or WebGL is unavailable, the page simply shows its plain background.
+- The 3D scene pauses when the tab is hidden, and animations are turned off for visitors who prefer reduced motion.
+- Colors and fonts are CSS variables at the top of `styles/main.css`.
+
+## License
+
+MIT, see `LICENSE`.
